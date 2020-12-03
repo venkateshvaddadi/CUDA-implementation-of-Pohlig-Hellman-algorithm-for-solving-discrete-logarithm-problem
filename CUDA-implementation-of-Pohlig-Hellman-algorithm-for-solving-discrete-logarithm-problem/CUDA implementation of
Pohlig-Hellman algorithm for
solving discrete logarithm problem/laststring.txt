@@ -1,0 +1,34 @@
+def getvalue(list2):
+	val=0;
+	val=list2[0]+list2[1]*pow(2,32)+list2[2]*pow(2,64)+list2[3]*pow(2,96);
+	return val;
+
+print(len(a));
+print(len(b));
+print(len(c));
+print(len(result));
+
+
+i=0;
+val_a=getvalue(a[4*i:4*(i+1)]);
+val_c=getvalue(c);
+no_integers=(len(b))/4;
+val_c=getvalue(c[4*i:4*(i+1)]);
+
+
+
+
+i=0;
+
+while(i<no_integers):
+	val_b=getvalue(b[4*i:4*(i+1)]);
+	#val_c=getvalue(c[4*i:4*(i+1)]);
+	cal_res=pow(val_a,val_b,val_c);
+	given_res=getvalue(result[4*i:4*(i+1)]);
+	if(cal_res!=given_res):
+		print(i,val_a,val_b,val_c,cal_res,given_res,"no");
+#	else:
+#		print(i,val_a,val_b,val_c,cal_res,given_res,"yes");
+	i=i+1;
+
+
